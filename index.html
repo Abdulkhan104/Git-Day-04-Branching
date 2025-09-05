@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ABDUL_BRAND</title>
+  <meta name="description" content="A modern, responsive single-page template using only HTML and CSS (no JavaScript)." />
+  <style>
+    :root{
+      --bg:#0b0c10; --panel:#111318; --text:#e6eaf2; --muted:#aab3c5; --brand:#0ea5e9; --accent:#22d3ee; --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:linear-gradient(180deg,var(--bg),#0b1324 60%);color:var(--text);}
+    .container{max-width:1080px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;background:rgba(10,11,15,.65);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.04)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--accent))}
+    nav a{color:var(--text);text-decoration:none;opacity:.9;font-weight:600;margin-left:14px}
+
+    /* layout */
+    main{padding-top:28px}
+    section{padding:72px 0}
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center}
+    h1{font-size:clamp(28px,5vw,48px);margin:0 0 12px}
+    p.lead{color:var(--muted);margin:0 0 20px;font-size:clamp(14px,2.2vw,18px)}
+
+    .glass{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:18px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:10px 16px;border-radius:999px;font-weight:800;background:linear-gradient(135deg,var(--brand),var(--accent));color:#07101a;text-decoration:none}
+    .btn.alt{background:transparent;border:1px solid rgba(255,255,255,.08);color:var(--text)}
+
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .badge{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.03);font-size:13px;color:var(--muted)}
+
+    /* grids */
+    .grid{display:grid;gap:18px}
+    .features{grid-template-columns:repeat(3,1fr)}
+    .showcase{grid-template-columns:repeat(3,1fr)}
+    .projects{grid-template-columns:repeat(3,1fr)}
+    .card{padding:18px}
+    .card h3{margin:0 0 6px}
+    .card p{margin:0;color:var(--muted)}
+
+    .item img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:12px;display:block}
+    .row{display:flex;gap:12px;align-items:center}
+    .sp-between{justify-content:space-between}
+
+    /* About */
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+    .about img{width:100%;border-radius:12px}
+
+    /* contact */
+    form{display:grid;gap:12px}
+    input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.06);background:transparent;color:var(--text)}
+    input::placeholder,textarea::placeholder{color:rgba(170,179,197,.6)}
+    .muted{color:var(--muted)}
+
+    footer{padding:28px 0 60px;text-align:center;color:var(--muted)}
+
+    /* responsiveness */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+      .features,.showcase,.projects{grid-template-columns:1fr 1fr}
+      nav{display:none}
+    }
+    @media (max-width:560px){
+      .features,.showcase,.projects{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>ABDUL</span>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero">
+      <div>
+        <h1>Build fast. Look modern. Ship proudly.</h1>
+        <p class="lead">A clean, responsive single-page template using only HTML and CSS — no JavaScript required. Replace the text and images to make it yours.</p>
+        <div class="cta">
+          <a class="btn" href="#showcase">Explore Showcase</a>
+          <a class="btn alt" href="#contact">Contact</a>
+        </div>
+        <div class="badges">
+          <span class="badge">HTML &amp; CSS</span>
+          <span class="badge">Accessible</span>
+          <span class="badge">Responsive</span>
+        </div>
+      </div>
+
+      <div class="glass card">
+        <strong>Quick Start</strong>
+        <ol class="muted" style="margin:8px 0 12px 18px;">
+          <li>Replace text &amp; images</li>
+          <li>Update links</li>
+          <li>Deploy to your host</li>
+        </ol>
+        <div class="row">
+          <input placeholder="your@email.com" aria-label="email" />
+          <a class="btn" href="#contact">Subscribe</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2 style="font-size:28px;margin:0 0 14px">Features that matter</h2>
+      <p class="muted" style="margin:0 0 20px">Accessible, fast, and elegant. Sensible defaults let you focus on content.</p>
+      <div class="grid features">
+        <article class="glass card">
+          <h3>Responsive Grid</h3>
+          <p>Designed to adapt to mobile, tablet, and desktop.</p>
+        </article>
+        <article class="glass card">
+          <h3>Beautiful UI</h3>
+          <p>Modern layout, soft shadows, and readable typography.</p>
+        </article>
+        <article class="glass card">
+          <h3>No JS Required</h3>
+          <p>Works when JavaScript is disabled or blocked — great for static hosts.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="showcase">
+      <h2 style="font-size:28px;margin:0 0 14px">Showcase</h2>
+      <p class="muted" style="margin:0 0 20px">Use this grid for portfolio pieces or product cards.</p>
+      <div class="grid showcase">
+        <div class="glass card item">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Laptop on a desk" />
+          <h4 style="margin:10px 0 4px">Dashboard UI</h4>
+          <p class="muted">Elegant admin dashboard concept.</p>
+          <div class="row sp-between" style="margin-top:10px">
+            <span style="font-weight:800;color:var(--accent)">$29</span>
+            <a class="btn" href="#contact">Buy</a>
+          </div>
+        </div>
+
+        <div class="glass card item">
+          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1200&auto=format&fit=crop" alt="Phone mockup" />
+          <h4 style="margin:10px 0 4px">Mobile Kit</h4>
+          <p class="muted">Clean components for apps.</p>
+          <div class="row sp-between" style="margin-top:10px">
+            <span style="font-weight:800;color:var(--accent)">$19</span>
+            <a class="btn" href="#contact">Buy</a>
+          </div>
+        </div>
+
+        <div class="glass card item">
+          <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200&auto=format&fit=crop" alt="Gradients" />
+          <h4 style="margin:10px 0 4px">Gradient Pack</h4>
+          <p class="muted">Lovely backgrounds and shapes.</p>
+          <div class="row sp-between" style="margin-top:10px">
+            <span style="font-weight:800;color:var(--accent)">$9</span>
+            <a class="btn" href="#contact">Buy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 style="font-size:28px;margin:0 0 14px">Recent Projects</h2>
+      <p class="muted" style="margin:0 0 20px">Link to repos, demos, or case studies.</p>
+      <div class="grid projects">
+        <article class="glass card">
+          <span class="badge">AWS</span>
+          <h3 style="margin:8px 0">Serverless API</h3>
+          <p class="muted">API Gateway + Lambda with JWT auth.</p>
+        </article>
+        <article class="glass card">
+          <span class="badge">E‑commerce</span>
+          <h3 style="margin:8px 0">PremiumShop</h3>
+          <p class="muted">Custom storefront and cart UX.</p>
+        </article>
+        <article class="glass card">
+          <span class="badge">Media</span>
+          <h3 style="margin:8px 0">Streaming App</h3>
+          <p class="muted">S3 uploads and signed URLs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div>
+        <h2 style="font-size:28px;margin:0 0 14px">About</h2>
+        <p class="muted">I build fast, reliable web apps with clean frontends and scalable backends. This is a starter template — make it yours.</p>
+        <ul class="muted" style="margin-top:12px">
+          <li>Performance-focused</li>
+          <li>Security-first</li>
+          <li>CI/CD ready</li>
+        </ul>
+      </div>
+      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop" alt="Work setup" />
+    </section>
+
+    <section id="contact">
+      <h2 style="font-size:28px;margin:0 0 14px">Get in touch</h2>
+      <p class="muted" style="margin:0 0 20px">Have a project in mind? Email or use this simple form (static).</p>
+      <div class="glass card" style="max-width:720px;margin:0 auto">
+        <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+          <div class="row">
+            <input name="name" placeholder="Your name" />
+            <input type="email" name="email" placeholder="Email address" />
+          </div>
+          <textarea name="message" rows="5" placeholder="Your message"></textarea>
+          <div class="row sp-between" style="margin-top:8px">
+            <label class="muted"><input type="checkbox" name="updates" /> Send me occasional updates</label>
+            <button class="btn" type="submit">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p style="margin:0">© YourBrand — Crafted with ♥</p>
+    </div>
+  </footer>
+</body>
+</html>
